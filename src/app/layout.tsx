@@ -7,8 +7,8 @@ import ThemeProvider from '@/context/theme-provider';
 import { inter } from '@/lib/fonts';
 
 export const metadata: Metadata = {
-  title: 'Simorgh Template',
-  description: 'A next.js template created by Simorgh',
+  title: 'Next Template',
+  description: 'A next.js template',
 };
 
 export default function RootLayout({
