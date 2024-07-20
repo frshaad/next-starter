@@ -1,4 +1,6 @@
-type Props = { children: React.ReactNode };
+import { ReactNode } from 'react';
+
+type Props = { children: ReactNode };
 
 export function TypographyH1({ children }: Props) {
   return (
