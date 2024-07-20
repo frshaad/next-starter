@@ -1,4 +1,4 @@
-import { TypographyH2, TypographyH4 } from '@/components/common/typography';
+import { TypographyH2, TypographyH4 } from '@/components/shared/typography';
 
 export default function HomePage() {
   return (
