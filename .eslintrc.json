@@ -1,28 +1,10 @@
 {
   "root": true,
-  "extends": ["airbnb", "next/core-web-vitals", "prettier"],
+  "extends": ["standard", "next/core-web-vitals", "prettier"],
   "plugins": ["simple-import-sort"],
 
   "rules": {
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "react/jsx-filename-extension": [
-      1,
-      { "extensions": [".js", ".jsx", "ts", ".tsx"] }
-    ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "react/jsx-props-no-spreading": "off",
-    "react/require-default-props": "off",
-    "react/react-in-jsx-scope": "off",
-    "import/prefer-default-export": "warn"
+    "simple-import-sort/exports": "error"
   }
 }
