@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function AdminNotFound() {
+export default function RootNotFound() {
   return (
     <div>
       <h2>Not Found</h2>
