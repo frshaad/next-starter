@@ -1,32 +1,25 @@
 import './globals.css';
 
 import type { Metadata } from 'next';
-import { ReactNode } from 'react';
 
-import ThemeProvider from '@/context/theme-provider';
+import { WebVitals } from '@/components/web-vitals';
 import { inter } from '@/lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Next Template',
-  description: 'A next.js template',
+  description: 'Next.js 15 template created by Farshad Hatami',
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
+        <WebVitals />
+        {children}
       </body>
     </html>
   );
