@@ -25,6 +25,9 @@ importers:
       tailwind-merge:
         specifier: ^2.5.5
         version: 2.5.5
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       '@types/node':
         specifier: ^20.17.10
@@ -2940,6 +2943,12 @@ packages:
       }
     engines: { node: '>=10' }
 
+  zod@3.24.1:
+    resolution:
+      {
+        integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==,
+      }
+
 snapshots:
   '@alloc/quick-lru@5.2.0': {}
 
@@ -4844,3 +4853,5 @@ snapshots:
   yaml@2.6.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.24.1: {}
