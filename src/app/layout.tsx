@@ -2,7 +2,6 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 
-import { WebVitals } from '@/components/web-vitals';
 import { inter } from '@/lib/fonts';
 
 export const metadata: Metadata = {
@@ -17,10 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <WebVitals />
-        {children}
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
