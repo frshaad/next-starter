@@ -16,26 +16,57 @@ A modern, feature-rich template for building scalable applications with Next.js 
 
 ## Getting Started
 
-### Using this template
+### Prerequisites
 
+- Node.js 18.17.0 or later
+- pnpm v8 or later
+- Git
+
+### Installation
+
+1. Clone the repository:
 ```bash
-# Using npx
-npx create-next-app your-app-name -e https://github.com/frshaad/next-template
-
-# Using create-next-app
-pnpm create next-app -e https://github.com/frshaad/next-template
+git clone https://github.com/frshaad/next-template.git your-project-name
+cd your-project-name
 ```
 
-### Development
-
+2. Install dependencies:
 ```bash
-# Install dependencies
 pnpm install
+```
 
-# Start development server
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
+
+4. Update the `.env` file with your configuration:
+```env
+DATABASE_URL="your-database-url"
+API_KEY="your-api-key"
+# Add other required environment variables
+```
+
+### Development Workflow
+
+1. Start the development server:
+```bash
 pnpm dev
+```
+The application will be available at `http://localhost:3000`
 
-# Build for production
+2. Format and lint your code:
+```bash
+# Format code
+pnpm format
+
+# Run linter
+pnpm lint
+```
+
+3. Build and deploy:
+```bash
+# Create production build
 pnpm build
 
 # Start production server
@@ -90,6 +121,20 @@ Example formatting times for this project:
 - Prettier + ESLint: ~2000ms
 
 The template includes a pre-configured `biome.json` that works seamlessly with modern Next.js features.
+
+## Project Structure
+
+```
+.
+├── src/
+│   ├── app/           # App router pages and layouts
+│   ├── components/    # React components
+│   ├── lib/          # Utility functions and configurations
+│   └── types/        # TypeScript type definitions
+├── public/           # Static assets
+├── biome.json        # Biome configuration
+└── next.config.js    # Next.js configuration
+```
 
 ## Contributing
 
