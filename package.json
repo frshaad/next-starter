@@ -1,7 +1,14 @@
 {
   "name": "next-15-template",
   "version": "0.1.0",
-  "private": true,
+  "description": "Next.js 15 template with TypeScript and TailwindCSS",
+  "private": false,
+  "author": "",
+  "license": "MIT",
+  "keywords": ["next", "react", "typescript", "tailwindcss"],
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -26,7 +33,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@types/node": "^22.10.10",
+    "@types/node": "^22.12.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "postcss": "^8.5.1",
