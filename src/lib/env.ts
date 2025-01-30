@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import './env-config';
 
 const envSchema = z.object({});
 
