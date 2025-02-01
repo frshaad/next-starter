@@ -26,6 +26,7 @@ const eslintConfig = [
           ignoreExport: false,
         },
       ],
+      'react/button-has-type': 'error',
       'check-file/filename-naming-convention': [
         'error',
         { '**/*.{ts,tsx}': 'KEBAB_CASE' },
