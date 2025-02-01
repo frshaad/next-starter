@@ -2,6 +2,7 @@ import './env-config';
 import { type Env, envSchema } from './schema';
 
 export function validateEnv(): Env {
+  // eslint-disable-next-line n/no-process-env
   const parsed = envSchema.safeParse(process.env);
 
   if (!parsed.success) {

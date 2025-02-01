@@ -1,5 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import checkFile from 'eslint-plugin-check-file';
+import nodePlugin from 'eslint-plugin-n';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -10,6 +11,7 @@ const eslintConfig = [
   {
     plugins: {
       'check-file': checkFile,
+      n: nodePlugin,
     },
     rules: {
       'prefer-arrow-callback': ['error'],
@@ -31,6 +33,7 @@ const eslintConfig = [
         'error',
         { 'src/**/!(__tests__)': 'KEBAB_CASE' },
       ],
+      'n/no-process-env': ['error'],
     },
   },
 ];
