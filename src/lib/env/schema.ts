@@ -8,6 +8,11 @@ export const envSchema = z.object({
   DB_NAME: z.string(),
   DB_PORT: z.coerce.number(),
   DATABASE_URL: z.string().url(),
+  DB_MIGRATING: z
+    .string()
+    .refine((s) => s === 'true' || s === 'false')
+    .transform((s) => s === 'true')
+    .optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;
