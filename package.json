@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "format": "prettier src/ --write"
+    "format": "prettier src/ --write",
+    "db:migrate": "DB_MIGRATING=true drizzle-kit migrate"
   },
   "dependencies": {
     "@next/env": "^15.1.6",
