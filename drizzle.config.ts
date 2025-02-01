@@ -11,4 +11,5 @@ export default defineConfig({
   },
   casing: 'snake_case',
   strict: true,
+  verbose: true,
 });
