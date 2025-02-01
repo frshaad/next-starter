@@ -1,11 +1,13 @@
 import { z } from 'zod';
 
 export const envSchema = z.object({
-  // Next-Auth environment variables
-  AUTH_SECRET: z.string(),
-  AUTH_GOOGLE_ID: z.string(),
-  AUTH_GOOGLE_SECRET: z.string(),
-  AUTH_DRIZZLE_URL: z.string(),
+  NODE_ENV: z.enum(['development', 'production']),
+  DB_HOST: z.string(),
+  DB_USER: z.string(),
+  DB_PASSWORD: z.string(),
+  DB_NAME: z.string(),
+  DB_PORT: z.coerce.number(),
+  DATABASE_URL: z.string().url(),
 });
 
 export type Env = z.infer<typeof envSchema>;
