@@ -1,5 +1,6 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import checkFile from 'eslint-plugin-check-file';
+import drizzle from 'eslint-plugin-drizzle';
 import nodePlugin from 'eslint-plugin-n';
 
 const compat = new FlatCompat({
@@ -12,10 +13,11 @@ const eslintConfig = [
     plugins: {
       'check-file': checkFile,
       n: nodePlugin,
+      drizzle,
     },
     rules: {
-      'prefer-arrow-callback': ['error'],
-      'prefer-template': ['error'],
+      'prefer-arrow-callback': 'error',
+      'prefer-template': 'error',
       'no-useless-rename': [
         'error',
         {
@@ -33,7 +35,9 @@ const eslintConfig = [
         'error',
         { 'src/**/!(__tests__)': 'KEBAB_CASE' },
       ],
-      'n/no-process-env': ['error'],
+      'n/no-process-env': 'error',
+      'drizzle/enforce-delete-with-where': 'error',
+      'drizzle/enforce-update-with-where': 'error',
     },
   },
 ];
