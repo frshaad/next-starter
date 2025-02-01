@@ -1,7 +1,7 @@
 import './env-config';
 import { type Env, envSchema } from './schema';
 
-function validateEnv(): Env {
+export function validateEnv(): Env {
   const parsed = envSchema.safeParse(process.env);
 
   if (!parsed.success) {
