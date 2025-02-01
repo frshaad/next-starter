@@ -6,7 +6,8 @@ const buildEslintCommand = (filenames) =>
     .join(' --file ')}`;
 
 const commands = {
-  '*.{ts,tsx,js,jsx,json}': [buildEslintCommand, 'prettier --write'],
+  '*.{ts,tsx,js,jsx}': [buildEslintCommand, 'prettier --write'],
+  '*.{json,md}': ['prettier --write'],
 };
 
 export default commands;
