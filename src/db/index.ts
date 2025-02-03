@@ -8,5 +8,5 @@ import * as schema from './schema';
 export const client = postgres(env.DATABASE_URL, {
   max: env.DB_MIGRATING ? 1 : undefined,
 });
-const db = drizzle({ client, schema, casing: 'snake_case' });
-export default db;
+const database = drizzle({ client, schema, casing: 'snake_case' });
+export default database;

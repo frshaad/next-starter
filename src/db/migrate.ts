@@ -8,6 +8,6 @@ if (!env.DB_MIGRATING) {
   throw new Error('You must set DB_MIGRATING to true.');
 }
 
-await migrate(db, { migrationsFolder: config.out! });
+await migrate(db, { migrationsFolder: config.out as string });
 
 await client.end();
