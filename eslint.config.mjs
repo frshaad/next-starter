@@ -1,11 +1,10 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import configPrettier from 'eslint-config-prettier';
 import checkFile from 'eslint-plugin-check-file';
-import eslintPluginCompat from 'eslint-plugin-compat';
 import drizzle from 'eslint-plugin-drizzle';
 import n from 'eslint-plugin-n';
-import eslintPluginUnicorn from 'eslint-plugin-unicorn';
+import unicorn from 'eslint-plugin-unicorn';
 
 const MAX_JSX_DEPTH = 4;
 const MAX_DEPTH = 4;
@@ -59,7 +58,7 @@ const eslintConfig = [
     },
   },
   // Unicorn
-  eslintPluginUnicorn.configs['flat/recommended'],
+  unicorn.configs['flat/recommended'],
   {
     rules: {
       'unicorn/prevent-abbreviations': [
@@ -149,10 +148,8 @@ const eslintConfig = [
       'drizzle/enforce-update-with-where': 'error',
     },
   },
-  //
-  eslintPluginCompat.configs['flat/recommended'],
   // Prettier
-  eslintConfigPrettier,
+  configPrettier,
 ];
 
 export default eslintConfig;
