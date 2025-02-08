@@ -96,6 +96,9 @@ importers:
       eslint-plugin-drizzle:
         specifier: ^0.2.3
         version: 0.2.3(eslint@9.19.0(jiti@1.21.7))
+      eslint-plugin-jsx-a11y:
+        specifier: ^6.10.2
+        version: 6.10.2(eslint@9.19.0(jiti@1.21.7))
       eslint-plugin-n:
         specifier: ^17.15.1
         version: 17.15.1(eslint@9.19.0(jiti@1.21.7))
