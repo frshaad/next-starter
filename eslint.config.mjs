@@ -65,7 +65,7 @@ const eslintConfig = [
         'error',
         {
           allowList: {
-            // prop: true,
+            utils: true,
           },
         },
       ],

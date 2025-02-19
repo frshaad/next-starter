@@ -14,7 +14,7 @@ type CountContextType = {
 };
 
 const CountContext = createContext<StoreApi<CountContextType> | undefined>(
-  undefined
+  undefined,
 );
 
 type CountContextProviderProperties = PropsWithChildren & {
@@ -28,7 +28,7 @@ export function CountContextProvider({
   const [store] = useState(() =>
     createStore<CountContextType>(() => ({
       count: initialCount,
-    }))
+    })),
   );
 
   return (
@@ -40,7 +40,7 @@ export function useCountContext(): CountContextType {
   const context = useContext(CountContext);
   if (!context) {
     throw new Error(
-      'useCountContext must be used within CountContext.Provider'
+      'useCountContext must be used within CountContext.Provider',
     );
   }
   return useStore(context, (state) => state);
