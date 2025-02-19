@@ -58,14 +58,21 @@ const eslintConfig = [
     },
   },
   // Unicorn
-  unicorn.configs['flat/recommended'],
+  unicorn.configs.recommended,
   {
     rules: {
       'unicorn/prevent-abbreviations': [
         'error',
         {
           allowList: {
+            util: true,
             utils: true,
+            prop: true,
+            props: true,
+            param: true,
+            params: true,
+            env: true,
+            db: true,
           },
         },
       ],
