@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { ReactScan } from '@/components/react-scan';
 import { ThemeProvider } from '@/components/theme-provider';
 
 import './globals.css';
@@ -22,6 +23,7 @@ export default function RootLayout({
           rel="icon"
         />
       </head>
+      <ReactScan />
       <body className="h-screen w-screen">
         <ThemeProvider
           attribute="class"
