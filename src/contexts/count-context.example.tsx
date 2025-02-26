@@ -4,7 +4,7 @@ import {
   type PropsWithChildren,
   createContext,
   useContext,
-  useState,
+  useMemo,
 } from 'react';
 
 import { type StoreApi, createStore, useStore } from 'zustand';
@@ -25,12 +25,13 @@ export function CountContextProvider({
   initialCount,
   children,
 }: CountContextProviderProperties) {
-  const [store] = useState(() =>
-    createStore<CountContextType>(() => ({
-      count: initialCount,
-    })),
+  const store = useMemo(
+    () =>
+      createStore<CountContextType>(() => ({
+        count: initialCount,
+      })),
+    [initialCount],
   );
-
   return (
     <CountContext.Provider value={store}>{children}</CountContext.Provider>
   );
