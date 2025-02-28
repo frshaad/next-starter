@@ -1,1 +1,1 @@
-export { users, usersInsertSchema } from './users';
+export * from './users';

@@ -16,5 +16,5 @@ export function validateEnvironment(): Environment {
   return parsed.data;
 }
 
-const environment = validateEnvironment();
-export default environment;
+const env = validateEnvironment();
+export default env;
