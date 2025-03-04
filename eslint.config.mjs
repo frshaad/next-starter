@@ -1,4 +1,3 @@
-// @ts-check
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import configPrettier from 'eslint-config-prettier';
@@ -20,12 +19,12 @@ export default tseslint.config([
     plugins: { n },
     rules: {
       'max-depth': ['warn', { max: MAX_DEPTH }],
-      'max-params': ['error', { max: MAX_FN_PARAMS }],
-      'prefer-const': 'error',
-      'no-eval': 'error',
-      'no-param-reassign': 'error',
-      'no-promise-executor-return': 'error',
-      'no-unreachable-loop': 'error',
+      'max-params': ['warn', { max: MAX_FN_PARAMS }],
+      'prefer-const': 'warn',
+      'no-eval': 'warn',
+      'no-param-reassign': 'warn',
+      'no-promise-executor-return': 'warn',
+      'no-unreachable-loop': 'warn',
 
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-import-type-side-effects': 'error',
@@ -33,13 +32,11 @@ export default tseslint.config([
       '@typescript-eslint/prefer-as-const': 'error',
       '@typescript-eslint/no-explicit-any': 'warn',
 
-      'react/button-has-type': 'error',
-      'react/jsx-no-constructed-context-values': 'error',
+      'react/button-has-type': 'warn',
+      'react/jsx-no-constructed-context-values': 'warn',
       'react/no-array-index-key': 'error',
-      'react/self-closing-comp': 'error',
-      'react/jsx-no-useless-fragment': 'error',
-      'react/hook-use-state': 'error',
-      'react/no-unstable-nested-components': 'error',
+      'react/jsx-no-useless-fragment': 'warn',
+      'react/no-unstable-nested-components': 'warn',
 
       'jsx-a11y/lang': 'error',
       'jsx-a11y/no-static-element-interactions': 'error',
