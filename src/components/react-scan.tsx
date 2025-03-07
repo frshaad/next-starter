@@ -2,7 +2,6 @@
 
 // react-scan must be imported before react
 import { scan } from 'react-scan';
-
 import { type JSX, useEffect } from 'react';
 
 export function ReactScan(): JSX.Element {

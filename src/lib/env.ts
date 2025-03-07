@@ -1,7 +1,14 @@
-import './environment-config';
-import { type Environment, environmentSchema } from './schema';
+import { loadEnvConfig } from '@next/env';
+import { z } from 'zod';
 
-export function validateEnvironment(): Environment {
+const projectDirectory = process.cwd();
+loadEnvConfig(projectDirectory);
+
+const environmentSchema = z.object({
+  NODE_ENV: z.enum(['development', 'production']),
+});
+
+function validateEnvironment(): z.infer<typeof environmentSchema> {
   // eslint-disable-next-line n/no-process-env
   const parsed = environmentSchema.safeParse(process.env);
 
@@ -17,4 +24,5 @@ export function validateEnvironment(): Environment {
 }
 
 const env = validateEnvironment();
-export default env;
+
+export { env, validateEnvironment };

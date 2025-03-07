@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
-
 import { ReactScan } from '@/components/react-scan';
 import { ThemeProvider } from '@/components/theme-provider';
-
 import './globals.css';
 
 export const metadata: Metadata = {
