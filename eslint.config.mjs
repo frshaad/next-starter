@@ -32,7 +32,6 @@ export default tseslint.config([
       'prefer-template': 'warn',
       'object-shorthand': 'warn',
       'no-duplicate-imports': 'warn',
-      'no-magic-numbers': 'warn',
       'no-unneeded-ternary': 'warn',
 
       '@typescript-eslint/consistent-type-imports': 'error',
@@ -40,6 +39,7 @@ export default tseslint.config([
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/prefer-as-const': 'error',
       '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': 'off',
 
       'react/button-has-type': 'warn',
       'react/jsx-no-constructed-context-values': 'warn',
