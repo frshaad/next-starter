@@ -2,6 +2,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import configPrettier from 'eslint-config-prettier';
 import n from 'eslint-plugin-n';
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import tseslint from 'typescript-eslint';
 
 const MAX_DEPTH = 4;
@@ -15,6 +16,7 @@ export default tseslint.config([
   { languageOptions: { globals: { React: true } }, ignores: ['node_modules'] },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   js.configs.recommended,
+  eslintPluginUnicorn.configs.recommended,
   {
     plugins: { n },
     rules: {
@@ -53,6 +55,9 @@ export default tseslint.config([
       'jsx-a11y/no-noninteractive-element-interactions': 'error',
 
       'n/no-process-env': 'error',
+
+      'unicorn/better-regex': 'warn',
+      'unicorn/prevent-abbreviations': 'off',
     },
   },
   configPrettier,
