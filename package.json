@@ -25,7 +25,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "format": "prettier src/ --write",
+    "format": "prettier . --write",
     "prepare": "husky"
   },
   "dependencies": {
