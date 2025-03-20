@@ -58,6 +58,7 @@ export default tseslint.config([
       'n/no-process-env': 'error',
 
       'unicorn/prevent-abbreviations': 'off',
+      'unicorn/no-null': 'off',
     },
   },
   configPrettier,
