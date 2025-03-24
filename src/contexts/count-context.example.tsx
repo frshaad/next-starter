@@ -1,28 +1,28 @@
-'use client';
+'use client'
 
 import {
-  type PropsWithChildren,
   createContext,
+  type PropsWithChildren,
   useContext,
   useMemo,
-} from 'react';
-import { type StoreApi, createStore, useStore } from 'zustand';
+} from 'react'
+import { createStore, type StoreApi, useStore } from 'zustand'
 
 type CountContextType = {
-  count: number;
-};
+  count: number
+}
 
 const CountContext = createContext<StoreApi<CountContextType> | undefined>(
   undefined,
-);
+)
 
-type CountContextProviderProperties = PropsWithChildren & {
-  initialCount: number;
-};
+type CountContextProviderProperties = {
+  initialCount: number
+} & PropsWithChildren
 
 export function CountContextProvider({
-  initialCount,
   children,
+  initialCount,
 }: CountContextProviderProperties) {
   const store = useMemo(
     () =>
@@ -30,18 +30,14 @@ export function CountContextProvider({
         count: initialCount,
       })),
     [initialCount],
-  );
-  return (
-    <CountContext.Provider value={store}>{children}</CountContext.Provider>
-  );
+  )
+  return <CountContext.Provider value={store}>{children}</CountContext.Provider>
 }
 
 export function useCountContext(): CountContextType {
-  const context = useContext(CountContext);
+  const context = useContext(CountContext)
   if (!context) {
-    throw new Error(
-      'useCountContext must be used within CountContext.Provider',
-    );
+    throw new Error('useCountContext must be used within CountContext.Provider')
   }
-  return useStore(context, (state) => state);
+  return useStore(context, (state) => state)
 }

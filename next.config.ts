@@ -1,8 +1,15 @@
-import type { NextConfig } from 'next';
-import { validateEnvironment } from '@/lib/env';
+import type { NextConfig } from 'next'
 
-validateEnvironment();
+import { validateEnvironment } from '@/lib/env'
 
-const nextConfig: NextConfig = {};
+validateEnvironment()
 
-export default nextConfig;
+const nextConfig: NextConfig = {
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
+}
+
+export default nextConfig

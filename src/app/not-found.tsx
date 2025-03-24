@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Link from 'next/link'
+
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/ui/card'
 
 export default function NotFound() {
   return (
@@ -17,11 +18,11 @@ export default function NotFound() {
           <CardDescription>Could not find requested resource</CardDescription>
         </CardHeader>
         <CardFooter>
-          <Button className="w-full" asChild>
+          <Button asChild className="w-full">
             <Link href="/">Return Home</Link>
           </Button>
         </CardFooter>
       </Card>
     </div>
-  );
+  )
 }

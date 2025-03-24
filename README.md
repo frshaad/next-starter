@@ -45,7 +45,7 @@ export const envSchema = z.object({
     .refine((s) => s === 'true' || s === 'false')
     .transform((s) => s === 'true')
     .optional(),
-});
+})
 ```
 
 ## 📦 Getting Started
