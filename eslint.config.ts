@@ -2,7 +2,6 @@ import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
 import configPrettier from 'eslint-config-prettier'
 import n from 'eslint-plugin-n'
-import perfectionist from 'eslint-plugin-perfectionist'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import tseslint from 'typescript-eslint'
@@ -29,7 +28,7 @@ export default tseslint.config([
   },
   eslintPluginUnicorn.configs.recommended,
   {
-    plugins: { n, perfectionist, 'simple-import-sort': simpleImportSort },
+    plugins: { n, 'simple-import-sort': simpleImportSort },
     rules: {
       '@typescript-eslint/consistent-type-imports': 'error',
       '@typescript-eslint/no-deprecated': 'error',
@@ -61,14 +60,6 @@ export default tseslint.config([
       'no-unreachable-loop': 'error',
       'no-var': 'error',
       'object-shorthand': 'error',
-
-      'perfectionist/sort-interfaces': 'warn',
-      'perfectionist/sort-intersection-types': 'warn',
-      'perfectionist/sort-jsx-props': 'warn',
-      'perfectionist/sort-object-types': 'warn',
-      'perfectionist/sort-objects': 'warn',
-      'perfectionist/sort-switch-case': 'warn',
-      'perfectionist/sort-union-types': 'warn',
 
       'prefer-const': 'error',
       'prefer-template': 'error',
