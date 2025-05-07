@@ -2,15 +2,6 @@
 
 import { useEffect } from 'react'
 
-import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-
 export default function Error({
   error,
   reset,
@@ -24,17 +15,11 @@ export default function Error({
 
   return (
     <div className="flex size-full items-center justify-center">
-      <Card>
-        <CardHeader>
-          <CardTitle>Error ❌</CardTitle>
-          <CardDescription>Something went wrong!</CardDescription>
-        </CardHeader>
-        <CardFooter>
-          <Button className="w-full" onClick={() => reset()}>
-            Try again
-          </Button>
-        </CardFooter>
-      </Card>
+      <h2>Error ❌</h2>
+      <p>Something went wrong!</p>
+      <button type="button" className="w-full" onClick={() => reset()}>
+        Try again
+      </button>
     </div>
   )
 }
