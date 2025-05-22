@@ -1,18 +1,12 @@
 {
   "singleQuote": true,
   "semi": false,
-
   "importOrder": [
     "^react$",
     "^next/?",
-    "^@?\\w",
-    "^@core/(.*)$",
-    "^@server/(.*)$",
-    "^@ui/(.*)$",
+    "<THIRD_PARTY_MODULES>",
     "^@/(.*)$",
-    "^\\.\\.(?!/?$)",
-    "^\\./(?=.*/)(?!/?$)",
-    "^\\./?$"
+    "^[./]"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,

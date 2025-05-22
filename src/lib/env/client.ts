@@ -1,6 +1,6 @@
-import { createEnv } from './shared'
+import { z } from 'zod/v4'
 
-import z from 'zod'
+import { createEnv } from './shared'
 
 export const clientEnv = createEnv({
   schema: {
