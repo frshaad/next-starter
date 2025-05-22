@@ -5,12 +5,16 @@
   "description": "A professional Next.js starter template with TypeScript, Tailwind CSS, and more",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
+    "check": "next lint && tsc --noEmit",
+    "dev": "next dev --turbopack",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "preview": "next build && next start",
     "start": "next start",
-    "format": "prettier . --write",
-    "lint": "next lint --fix",
-    "check": "tsc && next lint --fix && prettier . --write"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "next": "15.3.2",
