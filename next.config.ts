@@ -1,15 +1,5 @@
 import type { NextConfig } from 'next'
 
-import { validateEnvironment } from '@/lib/env'
-
-validateEnvironment()
-
-const nextConfig: NextConfig = {
-  logging: {
-    fetches: {
-      fullUrl: true,
-    },
-  },
-}
+const nextConfig: NextConfig = {}
 
 export default nextConfig
