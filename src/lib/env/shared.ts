@@ -1,4 +1,4 @@
-import { type ZodRawShape, z } from 'zod'
+import { type ZodRawShape, z } from 'zod/v4'
 
 type CreateEnvOptions<T extends ZodRawShape> = {
   schema: T
@@ -19,7 +19,7 @@ export function createEnv<T extends ZodRawShape>({
   const parsed = schemaObject.safeParse(rawEnv)
 
   if (!parsed.success) {
-    const formatted = parsed.error.format()
+    const formatted = z.treeifyError(parsed.error)
     console.error(
       `❌ Invalid ${isServer ? 'server' : 'client'} environment variables:`,
       formatted,
