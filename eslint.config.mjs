@@ -1,5 +1,4 @@
 import { FlatCompat } from '@eslint/eslintrc'
-import js from '@eslint/js'
 import configPrettier from 'eslint-config-prettier'
 import tseslint from 'typescript-eslint'
 
@@ -49,7 +48,12 @@ export default tseslint.config(
       },
     },
   },
-  js.configs.recommended,
+
+  {
+    rules: {
+      'react/button-has-type': 'warn',
+    },
+  },
 
   configPrettier,
 )
