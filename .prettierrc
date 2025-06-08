@@ -2,13 +2,15 @@
   "singleQuote": true,
   "semi": false,
   "importOrder": [
+    ".css$",
+    "^server-only$",
     "^react$",
     "^next/?",
     "<THIRD_PARTY_MODULES>",
     "^@/(.*)$",
     "^[./]"
   ],
-  "importOrderSeparation": true,
+  "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
   "plugins": [
     "@trivago/prettier-plugin-sort-imports",
