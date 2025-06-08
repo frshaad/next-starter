@@ -14,7 +14,7 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="flex size-full items-center justify-center">
+    <div className="mx-auto flex h-screen max-w-md items-center justify-center">
       <h2>Error ❌</h2>
       <p>Something went wrong!</p>
       <button type="button" className="w-full" onClick={() => reset()}>
