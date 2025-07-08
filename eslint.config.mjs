@@ -58,6 +58,8 @@ export default tseslint.config(
 
   {
     rules: {
+      // JS
+      'no-unused-vars': 'off',
       // React
       'react/button-has-type': 'warn',
       'react/jsx-boolean-value': ['warn', 'never'],
