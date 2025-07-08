@@ -31,9 +31,9 @@ export default function GlobalError({ reset }: GlobalErrorProps) {
 
             {/* Action Button */}
             <Button
-              onClick={reset}
               className="flex items-center gap-2"
               variant="destructive"
+              onClick={reset}
             >
               <RefreshCw className="h-4 w-4" />
               Try Again

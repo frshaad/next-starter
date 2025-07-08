@@ -25,15 +25,15 @@ export default function NotFound() {
           </div>
 
           {/* Decorative elements */}
-          <div className="bg-primary/60 absolute -top-4 left-8 h-4 w-4 animate-bounce rounded-full"></div>
+          <div className="bg-primary/60 absolute -top-4 left-8 h-4 w-4 animate-bounce rounded-full" />
           <div
             className="bg-primary/40 absolute right-12 -bottom-2 h-3 w-3 animate-bounce rounded-full"
             style={{ animationDelay: '0.3s' }}
-          ></div>
+          />
           <div
             className="bg-primary/50 absolute top-8 -right-2 h-2 w-2 animate-bounce rounded-full"
             style={{ animationDelay: '0.6s' }}
-          ></div>
+          />
         </div>
 
         {/* Content */}
@@ -64,15 +64,15 @@ export default function NotFound() {
         {/* Action Buttons */}
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <Button
+            className="flex items-center gap-2"
             variant="outline"
             onClick={() => router.back()}
-            className="flex items-center gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
             Go Back
           </Button>
 
-          <Button asChild className="flex items-center gap-2">
+          <Button className="flex items-center gap-2" asChild>
             <Link href="/">
               <Home className="h-4 w-4" />
               Go Home

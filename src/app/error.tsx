@@ -22,15 +22,15 @@ export default function Error({ error, reset }: ErrorProps) {
           </div>
 
           {/* Floating particles effect */}
-          <div className="bg-destructive/60 absolute -top-2 -right-2 h-3 w-3 animate-bounce rounded-full"></div>
+          <div className="bg-destructive/60 absolute -top-2 -right-2 h-3 w-3 animate-bounce rounded-full" />
           <div
             className="bg-destructive/40 absolute -bottom-1 -left-3 h-2 w-2 animate-bounce rounded-full"
             style={{ animationDelay: '0.5s' }}
-          ></div>
+          />
           <div
             className="bg-destructive/50 absolute top-1 -left-4 h-1.5 w-1.5 animate-bounce rounded-full"
             style={{ animationDelay: '1s' }}
-          ></div>
+          />
         </div>
 
         {/* Error Content */}
@@ -59,18 +59,18 @@ export default function Error({ error, reset }: ErrorProps) {
         {/* Action Buttons */}
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <Button
-            onClick={reset}
             className="flex items-center gap-2"
             variant="destructive"
+            onClick={reset}
           >
             <RefreshCw className="h-4 w-4" />
             Try Again
           </Button>
 
           <Button
+            className="flex items-center gap-2"
             variant="outline"
             onClick={() => router.back()}
-            className="flex items-center gap-2"
           >
             <Home className="h-4 w-4" />
             Go Home

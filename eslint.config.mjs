@@ -1,4 +1,5 @@
 import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
 import configPrettier from 'eslint-config-prettier'
 import tseslint from 'typescript-eslint'
 
@@ -11,6 +12,9 @@ export default tseslint.config(
     ignores: ['node_modules', '.next'],
     languageOptions: { globals: { React: true } },
   },
+
+  js.configs.recommended,
+
   ...compat.extends('next/core-web-vitals'),
 
   {
@@ -51,7 +55,29 @@ export default tseslint.config(
 
   {
     rules: {
+      // React
       'react/button-has-type': 'warn',
+      'react/jsx-boolean-value': ['warn', 'never'],
+      'react/jsx-curly-brace-presence': [
+        'warn',
+        { props: 'never', children: 'never' },
+      ],
+      'react/self-closing-comp': 'warn',
+      'react/hook-use-state': ['warn', { allowDestructuredState: true }],
+      'react/jsx-fragments': 'error',
+      'react/jsx-no-leaked-render': 'error',
+      'react/jsx-no-useless-fragment': 'warn',
+      'react/jsx-sort-props': [
+        'warn',
+        {
+          ignoreCase: true,
+          callbacksLast: true,
+          shorthandLast: true,
+          multiline: 'last',
+        },
+      ],
+      'react/no-invalid-html-attribute': 'warn',
+      'react/self-closing-comp': 'warn',
     },
   },
 
