@@ -1,6 +1,7 @@
 import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
 import configPrettier from 'eslint-config-prettier'
+import pluginUnicorn from 'eslint-plugin-unicorn'
 import tseslint from 'typescript-eslint'
 
 const compat = new FlatCompat({
@@ -53,6 +54,8 @@ export default tseslint.config(
     },
   },
 
+  pluginUnicorn.configs.recommended,
+
   {
     rules: {
       // React
@@ -77,7 +80,9 @@ export default tseslint.config(
         },
       ],
       'react/no-invalid-html-attribute': 'warn',
-      'react/self-closing-comp': 'warn',
+
+      // Unicorn
+      'unicorn/prevent-abbreviations': 'off',
     },
   },
 
