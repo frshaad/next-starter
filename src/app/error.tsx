@@ -1,52 +1,55 @@
 'use client'
 
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { AlertTriangle, Home, RefreshCw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-type ErrorProps = {
-  error: { digest?: string } & Error
+interface ErrorProps {
+  error: Error & { digest?: string }
   reset: () => void
 }
 
 export default function Error({ error, reset }: ErrorProps) {
+  const router = useRouter()
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-red-50 to-orange-50">
+    <div className="from-background via-muted/20 to-muted/40 flex min-h-screen items-center justify-center bg-gradient-to-br">
       <div className="max-w-md space-y-6 p-8 text-center">
         {/* Animated Error Icon */}
         <div className="relative">
-          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-red-100">
-            <AlertTriangle className="h-12 w-12 animate-pulse text-red-500" />
+          <div className="bg-destructive/10 dark:bg-destructive/20 border-destructive/20 mx-auto flex h-24 w-24 items-center justify-center rounded-full border">
+            <AlertTriangle className="text-destructive h-12 w-12 animate-pulse" />
           </div>
 
           {/* Floating particles effect */}
-          <div className="absolute -top-2 -right-2 h-3 w-3 animate-bounce rounded-full bg-red-300"></div>
+          <div className="bg-destructive/60 absolute -top-2 -right-2 h-3 w-3 animate-bounce rounded-full"></div>
           <div
-            className="absolute -bottom-1 -left-3 h-2 w-2 animate-bounce rounded-full bg-orange-300"
+            className="bg-destructive/40 absolute -bottom-1 -left-3 h-2 w-2 animate-bounce rounded-full"
             style={{ animationDelay: '0.5s' }}
           ></div>
           <div
-            className="absolute top-1 -left-4 h-1.5 w-1.5 animate-bounce rounded-full bg-red-400"
+            className="bg-destructive/50 absolute top-1 -left-4 h-1.5 w-1.5 animate-bounce rounded-full"
             style={{ animationDelay: '1s' }}
           ></div>
         </div>
 
         {/* Error Content */}
-        <div className="space-y-5">
-          <h1 className="text-2xl font-bold text-gray-900">
+        <div className="space-y-3">
+          <h1 className="text-foreground text-3xl font-bold">
             Oops! Something went wrong
           </h1>
-          <p className="leading-relaxed text-gray-600">
-            We encountered an unexpected error.
+          <p className="text-muted-foreground leading-relaxed">
+            We encountered an unexpected error. Don&apos;t worry, our team has
+            been notified and we&apos;re working on it.
           </p>
 
           {/* Error details in development */}
           {process.env.NODE_ENV === 'development' && (
-            <details className="mt-4 rounded-lg bg-gray-100 p-3 text-left">
-              <summary className="cursor-pointer text-sm font-medium text-gray-700">
+            <details className="bg-muted border-border mt-4 rounded-lg border p-3 text-left">
+              <summary className="text-foreground cursor-pointer text-sm font-medium">
                 Error Details
               </summary>
-              <pre className="mt-2 overflow-auto text-xs text-gray-600">
+              <pre className="text-muted-foreground mt-2 overflow-auto text-xs">
                 {error.message}
               </pre>
             </details>
@@ -57,18 +60,20 @@ export default function Error({ error, reset }: ErrorProps) {
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <Button
             onClick={reset}
-            variant="destructive"
             className="flex items-center gap-2"
+            variant="destructive"
           >
             <RefreshCw className="h-4 w-4" />
             Try Again
           </Button>
 
-          <Button className="flex items-center gap-2" asChild>
-            <Link href="/">
-              <Home className="h-4 w-4" />
-              Go Home
-            </Link>
+          <Button
+            variant="outline"
+            onClick={() => router.back()}
+            className="flex items-center gap-2"
+          >
+            <Home className="h-4 w-4" />
+            Go Home
           </Button>
         </div>
       </div>
