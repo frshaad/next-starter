@@ -15,15 +15,6 @@
     "check": "next lint && tsc --noEmit",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "next lint --fix --cache",
-      "prettier --write"
-    ],
-    "*.{json,md,css}": [
-      "prettier --write"
-    ]
-  },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@radix-ui/react-slot": "^1.2.3",
@@ -49,7 +40,6 @@
     "eslint-config-next": "15.3.5",
     "eslint-config-prettier": "^10.1.5",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.13",
