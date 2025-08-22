@@ -1,7 +1,5 @@
 {
   "singleQuote": true,
-  "semi": false,
-  "arrowParens": "avoid",
   "importOrder": [
     ".css$",
     "^server-only$",

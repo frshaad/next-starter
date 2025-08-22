@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { AlertCircle, RefreshCw } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { AlertCircle, RefreshCw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface GlobalErrorProps {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }
 
 export default function GlobalError({ reset }: GlobalErrorProps) {
@@ -42,5 +42,5 @@ export default function GlobalError({ reset }: GlobalErrorProps) {
         </div>
       </body>
     </html>
-  )
+  );
 }

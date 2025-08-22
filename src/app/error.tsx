@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import { useRouter } from 'next/navigation'
-import { AlertTriangle, Home, RefreshCw } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation';
+import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 interface ErrorProps {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }
 
 export default function Error({ error, reset }: ErrorProps) {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="from-background via-muted/20 to-muted/40 flex min-h-screen items-center justify-center bg-gradient-to-br">
@@ -78,5 +78,5 @@ export default function Error({ error, reset }: ErrorProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

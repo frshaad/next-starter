@@ -9,13 +9,21 @@ const compat = new FlatCompat({
 
 export default tseslint.config(
   {
-    ignores: ['node_modules', '.next'],
     languageOptions: { globals: { React: true } },
   },
 
   js.configs.recommended,
 
   ...compat.extends('next/core-web-vitals'),
+  {
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      'out/**',
+      'build/**',
+      'next-env.d.ts',
+    ],
+  },
 
   {
     files: ['**/*.ts', '**/*.tsx'],

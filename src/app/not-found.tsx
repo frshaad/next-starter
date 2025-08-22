@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { ArrowLeft, HelpCircle, Home, Search } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { ArrowLeft, HelpCircle, Home, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function NotFound() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="from-background via-muted/10 to-muted/30 flex min-h-screen items-center justify-center bg-gradient-to-br">
@@ -81,5 +81,5 @@ export default function NotFound() {
         </div>
       </div>
     </div>
-  )
+  );
 }
