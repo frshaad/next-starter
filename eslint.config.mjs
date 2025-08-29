@@ -1,11 +1,11 @@
-import { FlatCompat } from '@eslint/eslintrc'
-import js from '@eslint/js'
-import configPrettier from 'eslint-config-prettier'
-import tseslint from 'typescript-eslint'
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import configPrettier from 'eslint-config-prettier';
+import tseslint from 'typescript-eslint';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
-})
+});
 
 export default tseslint.config(
   {
@@ -91,4 +91,4 @@ export default tseslint.config(
   },
 
   configPrettier,
-)
+);

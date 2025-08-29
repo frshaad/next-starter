@@ -26,7 +26,7 @@ NODE_ENV=development
 ```typescript
 export const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production']),
-})
+});
 ```
 
 ## 📦 Getting Started
