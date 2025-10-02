@@ -1,18 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import StoreProvider from "@/providers/store-provider";
-import ThemeProvider from "@/providers/theme-provider";
+import { inter } from "@/lib/fonts";
+import Providers from "@/providers";
 
 export const metadata: Metadata = {
-  description: "A basic starter for Next.js",
   title: "Next.js Starter App",
+  description: "A basic starter for Next.js",
 };
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,
@@ -22,14 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          disableTransitionOnChange
-          enableSystem
-        >
-          <StoreProvider>{children}</StoreProvider>
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
