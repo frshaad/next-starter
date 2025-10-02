@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import StoreProvider from "@/providers/store-provider";
 import ThemeProvider from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ export default function RootLayout({
           disableTransitionOnChange
           enableSystem
         >
-          {children}
+          <StoreProvider>{children}</StoreProvider>
         </ThemeProvider>
       </body>
     </html>
