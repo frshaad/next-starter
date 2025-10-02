@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
+import ThemeProvider from '@/providers/theme-provider';
 
 export const metadata: Metadata = {
   description: 'A basic starter for Next.js',
