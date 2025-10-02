@@ -1,41 +1,41 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { AlertTriangle, Home, RefreshCw } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
-interface ErrorProps {
+type ErrorProps = {
   error: Error & { digest?: string };
   reset: () => void;
-}
+};
 
-export default function Error({ error, reset }: ErrorProps) {
+export default function ErrorComponent({ error, reset }: ErrorProps) {
   const router = useRouter();
 
   return (
-    <div className="from-background via-muted/20 to-muted/40 flex min-h-screen items-center justify-center bg-gradient-to-br">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-background via-muted/20 to-muted/40">
       <div className="max-w-md space-y-6 p-8 text-center">
         {/* Animated Error Icon */}
         <div className="relative">
-          <div className="bg-destructive/10 dark:bg-destructive/20 border-destructive/20 mx-auto flex h-24 w-24 items-center justify-center rounded-full border">
-            <AlertTriangle className="text-destructive h-12 w-12 animate-pulse" />
+          <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-destructive/20 bg-destructive/10 dark:bg-destructive/20">
+            <AlertTriangle className="h-12 w-12 animate-pulse text-destructive" />
           </div>
 
           {/* Floating particles effect */}
-          <div className="bg-destructive/60 absolute -top-2 -right-2 h-3 w-3 animate-bounce rounded-full" />
+          <div className="-top-2 -right-2 absolute h-3 w-3 animate-bounce rounded-full bg-destructive/60" />
           <div
-            className="bg-destructive/40 absolute -bottom-1 -left-3 h-2 w-2 animate-bounce rounded-full"
-            style={{ animationDelay: '0.5s' }}
+            className="-bottom-1 -left-3 absolute h-2 w-2 animate-bounce rounded-full bg-destructive/40"
+            style={{ animationDelay: "0.5s" }}
           />
           <div
-            className="bg-destructive/50 absolute top-1 -left-4 h-1.5 w-1.5 animate-bounce rounded-full"
-            style={{ animationDelay: '1s' }}
+            className="-left-4 absolute top-1 h-1.5 w-1.5 animate-bounce rounded-full bg-destructive/50"
+            style={{ animationDelay: "1s" }}
           />
         </div>
 
         {/* Error Content */}
         <div className="space-y-3">
-          <h1 className="text-foreground text-3xl font-bold">
+          <h1 className="font-bold text-3xl text-foreground">
             Oops! Something went wrong
           </h1>
           <p className="text-muted-foreground leading-relaxed">
@@ -44,12 +44,12 @@ export default function Error({ error, reset }: ErrorProps) {
           </p>
 
           {/* Error details in development */}
-          {process.env.NODE_ENV === 'development' && (
-            <details className="bg-muted border-border mt-4 rounded-lg border p-3 text-left">
-              <summary className="text-foreground cursor-pointer text-sm font-medium">
+          {process.env.NODE_ENV === "development" && (
+            <details className="mt-4 rounded-lg border border-border bg-muted p-3 text-left">
+              <summary className="cursor-pointer font-medium text-foreground text-sm">
                 Error Details
               </summary>
-              <pre className="text-muted-foreground mt-2 overflow-auto text-xs">
+              <pre className="mt-2 overflow-auto text-muted-foreground text-xs">
                 {error.message}
               </pre>
             </details>
@@ -60,8 +60,8 @@ export default function Error({ error, reset }: ErrorProps) {
         <div className="flex flex-col justify-center gap-3 sm:flex-row">
           <Button
             className="flex items-center gap-2"
-            variant="destructive"
             onClick={reset}
+            variant="destructive"
           >
             <RefreshCw className="h-4 w-4" />
             Try Again
@@ -69,8 +69,8 @@ export default function Error({ error, reset }: ErrorProps) {
 
           <Button
             className="flex items-center gap-2"
-            variant="outline"
             onClick={() => router.back()}
+            variant="outline"
           >
             <Home className="h-4 w-4" />
             Go Home

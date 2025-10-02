@@ -1,16 +1,16 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import ThemeProvider from '@/providers/theme-provider';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import ThemeProvider from "@/providers/theme-provider";
 
 export const metadata: Metadata = {
-  description: 'A basic starter for Next.js',
-  title: 'Next.js Starter App',
+  description: "A basic starter for Next.js",
+  title: "Next.js Starter App",
 };
 
 const inter = Inter({
-  variable: '--font-sans',
-  subsets: ['latin'],
+  variable: "--font-sans",
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
