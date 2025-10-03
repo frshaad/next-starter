@@ -9,9 +9,8 @@
     "build": "next build",
     "start": "next start",
     "preview": "next build && next start",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-    "lint": "ultracite fix",
-    "lint:unsafe": "ultracite fix --unsafe",
+    "fix": "ultracite fix",
+    "fix:unsafe": "ultracite fix --unsafe",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
