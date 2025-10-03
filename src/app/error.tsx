@@ -3,6 +3,7 @@
 import { AlertTriangle, Home, RefreshCw } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import env from "@/lib/env";
 
 type ErrorProps = {
   error: Error & { digest?: string };
@@ -44,7 +45,7 @@ export default function ErrorComponent({ error, reset }: ErrorProps) {
           </p>
 
           {/* Error details in development */}
-          {process.env.NODE_ENV === "development" && (
+          {env.NODE_ENV === "development" && (
             <details className="mt-4 rounded-lg border border-border bg-muted p-3 text-left">
               <summary className="cursor-pointer font-medium text-foreground text-sm">
                 Error Details
