@@ -1,8 +1,6 @@
-"use client";
+'use client';
 
-import QueryProvider from "./query-provider";
-import StoreProvider from "./store-provider";
-import ThemeProvider from "./theme-provider";
+import { ThemeProvider } from './theme-provider';
 
 export default function Providers({ children }: React.PropsWithChildren) {
   return (
@@ -12,9 +10,7 @@ export default function Providers({ children }: React.PropsWithChildren) {
       disableTransitionOnChange
       enableSystem
     >
-      <QueryProvider>
-        <StoreProvider>{children}</StoreProvider>
-      </QueryProvider>
+      {children}
     </ThemeProvider>
   );
 }

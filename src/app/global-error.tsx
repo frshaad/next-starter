@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { AlertCircle, RefreshCw } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { AlertCircle, RefreshCw } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 type GlobalErrorProps = {
   error: Error & { digest?: string };
@@ -10,19 +10,18 @@ type GlobalErrorProps = {
 
 export default function GlobalError({ reset }: GlobalErrorProps) {
   return (
-    // biome-ignore lint/a11y/useHtmlLang: This is a valid use case.
     <html>
       <body className="dark">
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-background to-muted">
+        <div className="from-background to-muted flex min-h-screen items-center justify-center bg-linear-to-br">
           <div className="max-w-md space-y-6 p-8 text-center">
             {/* Critical Error Icon */}
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-destructive/30 bg-destructive/10 dark:bg-destructive/20">
-              <AlertCircle className="h-10 w-10 animate-pulse text-destructive" />
+            <div className="border-destructive/30 bg-destructive/10 dark:bg-destructive/20 mx-auto flex h-20 w-20 items-center justify-center rounded-full border">
+              <AlertCircle className="text-destructive h-10 w-10 animate-pulse" />
             </div>
 
             {/* Error Content */}
             <div className="space-y-3">
-              <h1 className="font-bold text-2xl text-foreground">
+              <h1 className="text-foreground text-2xl font-bold">
                 Critical Error
               </h1>
               <p className="text-muted-foreground leading-relaxed">
